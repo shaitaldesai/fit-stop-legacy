@@ -128,6 +128,8 @@ function checkLogin(req, res) {
   var name = req.body.username;
   var pass = req.body.password;
 
+  if (!name || !pass) res.status(400).send('Log in attempt failed');
+
   User.findOne({username:name}, function(err, data) {
     if (err) {
       console.log("Database access error" + err);
