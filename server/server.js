@@ -40,8 +40,8 @@ app.post('/addWorkout', addWorkout);
 app.post('/login', checkLogin);
 app.post('/signup', addSignup);
 
-app.get('/getAllExercises', getAllExercises)
-
+app.get('/getAllExercises', getAllExercises);
+app.get('/getExercise/:name', getExercise);
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
   Request Handlers
@@ -54,14 +54,63 @@ function getAllExercises(req, res)  {
   })
 }
 
-// app.get('/getAllExercises', (req, res) => {
-//   console.log('hskdkdhsdhsdsh');
-//   Exercise.find({}, (err, data) => {
-//     if (err) res.status(400).send('Not found');
-//     console.log(data);
-//     res.end(data);
-//   })
-// })
+function getExercise(req, res) {
+  var returnObj = [];
+  var requestedWorkout = req.params.name;
+
+  Exercise.find({type: 'warmup'}, function(err, data) {
+    if (err) {
+      console.log(err);
+    } else {
+      var total = data.length;
+      var randomNum = Math.floor((Math.random() * total-1) + 0);
+      returnObj.push(data[randomNum])
+    }
+
+    Exercise.find({type: 'cooldown'}, function(err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        var total = data.length;
+        var randomNum = Math.floor((Math.random() * total-1) + 0);
+        returnObj.push(data[randomNum])
+      }
+
+      Exercise.find({name: requestedWorkout}, function(err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          returnObj.push(data[0]);
+        }
+
+        res.status('200').send(returnObj);
+
+      })
+
+    })
+
+  })
+
+  //  Exercise.find({type: 'cooldown'}, function(err, data) {
+  //   if (err) {
+  //     console.log(err);
+  //   } else {
+  //     var total = data.length;
+  //     var randomNum = Math.floor((Math.random() * total-1) + 0);
+  //     returnObj.push(data[randomNum])
+  //   }
+  // })
+
+  // Exercise.findOne({type: 'workout', _id: requestedWorkoutID}, function(err, data) {
+  //   if (err) {
+  //     console.log(err);
+  //   } else {
+  //     returnObj.push(data);
+  //   }
+  // })
+
+  // res.status('200').send(returnObj);
+}
 
 function getHistory(req, res) {
   var name = req.query.username;
