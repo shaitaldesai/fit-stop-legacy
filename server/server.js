@@ -67,24 +67,23 @@ function getExercise(req, res) {
       returnObj.push(data[randomNum])
     }
 
-    Exercise.find({type: 'cooldown'}, function(err, data) {
+    Exercise.find({name: requestedWorkout}, function(err, data) {
       if (err) {
         console.log(err);
       } else {
-        var total = data.length;
-        var randomNum = Math.floor((Math.random() * total-1) + 0);
-        returnObj.push(data[randomNum])
+        returnObj.push(data[0]);
       }
 
-      Exercise.find({name: requestedWorkout}, function(err, data) {
+      Exercise.find({type: 'cooldown'}, function(err, data) {
         if (err) {
           console.log(err);
         } else {
-          returnObj.push(data[0]);
+          var total = data.length;
+          var randomNum = Math.floor((Math.random() * total-1) + 0);
+          returnObj.push(data[randomNum])
         }
 
         res.status('200').send(returnObj);
-
       })
 
     })

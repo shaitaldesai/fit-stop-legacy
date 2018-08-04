@@ -12,7 +12,7 @@ class App extends React.Component {
       countdown: 3,
       time: null,
       showButtons: true,
-      workoutLengthInMins: 15,
+      workoutLengthInMins: 2,
       workoutList: []
     };
 
@@ -102,16 +102,17 @@ class App extends React.Component {
 
 
   handleWorkoutSelection(e) {
-    debugger
+
     // var id = e.target.getAttribute('value');
     var name = e.target.innerText;
     $.ajax({
       method: 'GET',
       url: `/getExercise/${name}`,
-      success: (exercise) => {
+      success: (data) => {
         debugger
-        console.log(exercise);
-         this.setState({currentWorkout:exercise.responseText})
+        console.log(data);
+        this.setState({currentWorkout: data})
+         // this.setState({currentWorkout:exercise.responseText})
       },
       error: (err) => {
         console.error(err);
@@ -148,7 +149,6 @@ class App extends React.Component {
       },
       complete: (data) => {
         console.log('exercise data:', data);
-
         this.setState({currentWorkout: JSON.parse(data.responseText)})
       },
       error: function(err) {
@@ -317,6 +317,7 @@ class App extends React.Component {
           return (<Countdown countdown={this.state.countdown} />);
       }
       if (this.state.currentState === 'Workout') {
+        // console.log('IMPORTANFNFJF', {this.state.currentWorkout})
         return (<Workout exercise={this.state.currentWorkout[this.state.currentExercise]} timer={this.formatTime(this.state.time)} countdown={this.state.countdown} goToSummary={this.goToSummary} goToDashboard={this.goToDashboard} ref="workoutPage" />);
       }
       if (this.state.currentState === 'Summary') {
