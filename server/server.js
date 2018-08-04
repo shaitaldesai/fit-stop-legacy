@@ -40,10 +40,28 @@ app.post('/addWorkout', addWorkout);
 app.post('/login', checkLogin);
 app.post('/signup', addSignup);
 
+app.get('/getAllExercises', getAllExercises)
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
   Request Handlers
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+function getAllExercises(req, res)  {
+  Exercise.find({type: 'workout'}, function(err, data) {
+    if (err) res.status(400).send('Not found')
+    res.send(JSON.stringify(data))
+  })
+}
+
+// app.get('/getAllExercises', (req, res) => {
+//   console.log('hskdkdhsdhsdsh');
+//   Exercise.find({}, (err, data) => {
+//     if (err) res.status(400).send('Not found');
+//     console.log(data);
+//     res.end(data);
+//   })
+// })
 
 function getHistory(req, res) {
   var name = req.query.username;

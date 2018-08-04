@@ -12,7 +12,8 @@ class App extends React.Component {
       countdown: 3,
       time: null,
       showButtons: true,
-      workoutLengthInMins: 15
+      workoutLengthInMins: 15,
+      workoutList: []
     };
 
     this.goToWorkout = this.goToWorkout.bind(this);
@@ -26,6 +27,7 @@ class App extends React.Component {
     this.logOut = this.logOut.bind(this);
     this.login = this.login.bind(this);
     this.signup = this.signup.bind(this);
+    this.listExercises= this.listExercises.bind(this);
 
   }
 
@@ -81,6 +83,22 @@ class App extends React.Component {
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
   The following functions send requests to the server
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+  listExercises() {
+    $.ajax({
+      method: 'GET',
+      url: '/getAllExercises',
+      success: (data) => {
+        console.log(data);
+        this.setState({workoutList: data});
+      },
+      error: function(err) {
+        console.error(err);
+      }
+    });
+  }
+
+
 
   getWorkoutHistory() {
     $.ajax({
@@ -256,8 +274,15 @@ class App extends React.Component {
 
   render() {
     var toBeRendered = () => {
+
       if (this.state.currentState === 'Dashboard') {
-        return (<Dashboard goToCountdown={this.goToCountdown} workoutHistory={this.state.workoutHistory} loggedIn={this.state.loggedIn} />);
+        return (
+          <div>
+            <Dashboard goToCountdown={this.goToCountdown} workoutHistory={this.state.workoutHistory} loggedIn={this.state.loggedIn} />
+            { this.state.workoutList }
+          </div>
+          );
+
       }
       if (this.state.currentState === 'Login') {
           return (<Login login={this.login} />);
@@ -278,8 +303,10 @@ class App extends React.Component {
 
     return (
       <div className = "App">
+      { this.listExercises() }
         <Header username={this.state.username} goToLogin={this.goToLogin} goToSignUp={this.goToSignUp} loggedIn={this.state.loggedIn} logOut={this.logOut} showButtons={this.state.showButtons}/>
         {toBeRendered()}
+
       </div>
     )
   }
