@@ -11,24 +11,27 @@ var seed = require('./seedDB.js');
 try {
   var config = require('./config.js');
 }
-
 catch(e) {
   config = {
     HOST: process.env.DATABASE_HOST,
     USER: process.env.DATABASE_USER,
     PASSWORD: process.env.DATABASE_PASSWORD,
     DATABASE: process.env.DATABASE_NAME,
-    PORT: 3306
+    PORT: process.env.DATABASE_PORT
   }
 }
 
 
-mongoose.connect(`mongodb://${config.USER}:${config.PASSWORD}@${config.HOST}:${config.PORT}/${config.DATABASE}`)
+var opts = { server: { auto_reconnect: false }, user: config.USER, pass: config.PASSWORD }
+
+mongoose.createConnection(config.HOST, config.DATABASE, config.PORT, opts)
+
+// mongoose.connect(`mongodb://${config.USER}:${config.PASSWORD}@${config.HOST}:${config.PORT}/${config.DATABASE}`);
 
 
-mongoose.connection.once('open', function() {
-  console.log('database is connected');
-});
+// mongoose.connection.once('open', function() {
+//   console.log('database is connected');
+// });
 
 mongoose.connection.on('error', function(error) {
   console.log('database connection error: ' + error);
