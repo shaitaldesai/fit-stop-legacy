@@ -24,6 +24,7 @@
     "express-session": "^1.15.6",
     "jquery": "^3.2.1",
     "mongoose": "^4.11.9",
+    "node-gyp": "^3.7.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   }
