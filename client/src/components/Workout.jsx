@@ -19,10 +19,13 @@ class Workout extends React.Component {
 
   highlightActiveTitle() {
     if (this.props.exercise.type === 'warmup') {
+      document.body.style = 'background: #ffffe5';
       this.setState({warmupActive: true, workoutActive: false, cooldownActive: false});
     } else if (this.props.exercise.type === 'workout') {
+      document.body.style = 'background: #e5f9ff';
       this.setState({warmupActive: false, workoutActive: true, cooldownActive: false});
     } else if (this.props.exercise.type === 'cooldown') {
+      document.body.style = 'background: #f2ffe5';
       this.setState({warmupActive: false, workoutActive: false, cooldownActive: true});
     } else {
       console.log('workout type does not exist')
