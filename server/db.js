@@ -1,13 +1,15 @@
 var mongoose = require('mongoose');
 var dbUri = require('./dbInfo').dbUri;
 var Schema = mongoose.Schema;
+var seed = require('./seedDB.js');
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
   Connection to MongoDB instance
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-mongoose.connect('mongodb://' + dbUri);
+// mongoose.connect('mongodb://' + dbUri);
+mongoose.connect('mongodb://localhost/fit-stop');
 
 mongoose.connection.once('open', function() {
   console.log('database is connected');
@@ -46,6 +48,13 @@ var userSchema = new Schema({
 
 var Exercise = mongoose.model('Exercise', exerciseSchema);
 var User = mongoose.model('User', userSchema);
+
+// Inserting data
+// Exercise.insertMany(seed, (err) => {
+//   console.log(err);
+// })
+
+
 
 module.exports.exerciseModel = Exercise;
 module.exports.userModel = User;
