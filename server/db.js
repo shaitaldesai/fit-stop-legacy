@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var dbUri = require('./dbInfo').dbUri;
 var Schema = mongoose.Schema;
 var seed = require('./seedDB.js');
 
@@ -8,8 +7,24 @@ var seed = require('./seedDB.js');
   Connection to MongoDB instance
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-// mongoose.connect('mongodb://' + dbUri);
-mongoose.connect('mongodb://localhost/fit-stop');
+
+try {
+  var config = require('./config.js');
+}
+
+catch(e) {
+  config = {
+    HOST: process.env.DATABASE_HOST,
+    USER: process.env.DATABASE_USER,
+    PASSWORD: process.env.DATABASE_PASSWORD,
+    DATABASE: process.env.DATABASE_NAME,
+    PORT: 3306
+  }
+}
+
+
+mongoose.connect(`mongodb://${config.USER}:${config.PASSWORD}@${config.HOST}:${config.PORT}/${config.DATABASE}`)
+
 
 mongoose.connection.once('open', function() {
   console.log('database is connected');
