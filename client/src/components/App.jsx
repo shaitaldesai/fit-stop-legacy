@@ -12,7 +12,7 @@ class App extends React.Component {
       countdown: 3,
       time: null,
       showButtons: true,
-      workoutLengthInMins: 2,
+      workoutLengthInMins: 15,
       workoutList: []
     };
 

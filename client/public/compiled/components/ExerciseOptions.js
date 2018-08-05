@@ -2,6 +2,7 @@
 
 function ExerciseOptions(props) {
   console.log(props);
+  // return <p> hello </p>
   var listItems = props.exercises.map(function (exercise) {
     return React.createElement(
       'li',
