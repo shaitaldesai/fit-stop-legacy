@@ -8,23 +8,12 @@ var seed = require('./seedDB.js');
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 
-try {
-  var config = require('./config.js');
-}
-catch(e) {
-  config = {
-    HOST: process.env.DATABASE_HOST,
-    USER: process.env.DATABASE_USER,
-    PASSWORD: process.env.DATABASE_PASSWORD,
-    DATABASE: process.env.DATABASE_NAME,
-    PORT: process.env.DATABASE_PORT
-  }
-}
+const MONGODB_URI = process.env.MONGODB_URI  || 'mongodb://localhost/fit-stop';
+mongoose.connect(MONGODB_URI);
 
+// var opts = { server: { auto_reconnect: false }, user: config.USER, pass: config.PASSWORD }
 
-var opts = { server: { auto_reconnect: false }, user: config.USER, pass: config.PASSWORD }
-
-mongoose.createConnection(config.HOST, config.DATABASE, config.PORT, opts)
+// mongoose.createConnection(config.HOST, config.DATABASE, config.PORT, opts)
 
 // mongoose.connect(`mongodb://${config.USER}:${config.PASSWORD}@${config.HOST}:${config.PORT}/${config.DATABASE}`);
 
@@ -60,9 +49,12 @@ var userSchema = new Schema({
 });
 
 
+
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
    Model Creation based on Schemas
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+
 
 var Exercise = mongoose.model('Exercise', exerciseSchema);
 var User = mongoose.model('User', userSchema);
