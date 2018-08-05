@@ -25,6 +25,7 @@
     "jquery": "^3.2.1",
     "mongoose": "^4.11.9",
     "node-gyp": "^3.7.0",
+    "node-pre-gyp": "^0.10.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   }
