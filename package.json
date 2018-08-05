@@ -4,6 +4,10 @@
   "description": "Get Fit",
   "author": "Anonymous Pizza",
   "license": "UNLICENSED",
+  "engines": {
+    "node": ">=0.4.7 <0.7.0",
+    "npm": ">=1.0.0"
+  },
   "scripts": {
     "prestart": "babel ./client/src --out-dir client/public/compiled --presets=es2015,react --ignore=node_modules,compiled --source-maps inline",
     "start": "nodemon ./server/server.js",
