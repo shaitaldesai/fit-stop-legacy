@@ -5,7 +5,8 @@
   "author": "Anonymous Pizza",
   "license": "UNLICENSED",
   "engines": {
-    "node": "8.9.4"
+    "node": "8.9.4",
+    "npm": "6.1.0"
   },
   "scripts": {
     "prestart": "babel ./client/src --out-dir client/public/compiled --presets=es2015,react --ignore=node_modules,compiled --source-maps inline",
