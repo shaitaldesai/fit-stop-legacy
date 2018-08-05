@@ -62,8 +62,8 @@ function getExercise(req, res) {
     if (err) {
       console.log(err);
     } else {
-      var total = data.length;
-      var randomNum = Math.floor((Math.random() * total-1) + 0);
+      var total = data.length - 1 ;
+      var randomNum = Math.floor((Math.random() * total) + 0);
       returnObj.push(data[randomNum])
     }
 
@@ -78,8 +78,8 @@ function getExercise(req, res) {
         if (err) {
           console.log(err);
         } else {
-          var total = data.length;
-          var randomNum = Math.floor((Math.random() * total-1) + 0);
+          var total = data.length - 1;
+          var randomNum = Math.floor((Math.random() * total) + 0);
           returnObj.push(data[randomNum])
         }
 

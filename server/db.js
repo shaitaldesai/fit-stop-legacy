@@ -11,17 +11,6 @@ var seed = require('./seedDB.js');
 const MONGODB_URI = process.env.MONGODB_URI  || 'mongodb://localhost/fit-stop';
 mongoose.connect(MONGODB_URI);
 
-// var opts = { server: { auto_reconnect: false }, user: config.USER, pass: config.PASSWORD }
-
-// mongoose.createConnection(config.HOST, config.DATABASE, config.PORT, opts)
-
-// mongoose.connect(`mongodb://${config.USER}:${config.PASSWORD}@${config.HOST}:${config.PORT}/${config.DATABASE}`);
-
-
-// mongoose.connection.once('open', function() {
-//   console.log('database is connected');
-// });
-
 mongoose.connection.on('error', function(error) {
   console.log('database connection error: ' + error);
 });
