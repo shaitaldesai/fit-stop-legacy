@@ -65,9 +65,9 @@ var Exercise = mongoose.model('Exercise', exerciseSchema);
 var User = mongoose.model('User', userSchema);
 
 // Inserting data
-// Exercise.insertMany(seed, (err) => {
-//   console.log(err);
-// })
+Exercise.insertMany(seed, (err) => {
+  console.log(err);
+})
 
 
 
