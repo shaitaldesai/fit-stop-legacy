@@ -1,3 +1,6 @@
+import React from 'react';
+import './../css/style.css';
+
 var Summary = (props) => (
   <div className="summary">
     <h1>Workout Summary</h1>
@@ -17,4 +20,5 @@ var Summary = (props) => (
 );
 
 
-window.Summary = Summary;
+export default Summary;
+// window.Summary = Summary;
