@@ -1,3 +1,8 @@
+import React from 'react';
+import History from './History.jsx';
+import './../css/style.css';
+import img from './images/pizzablue.png';
+
 var Dashboard = (props) => (
   <div className="dashboard">
     <h1>Start Workout</h1>
@@ -9,4 +14,5 @@ var Dashboard = (props) => (
 );
 
 
-window.Dashboard = Dashboard;
+export default Dashboard;
+// window.Dashboard = Dashboard;
