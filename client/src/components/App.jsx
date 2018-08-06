@@ -123,7 +123,7 @@ class App extends React.Component {
       method: 'GET',
       url: `/getExercise/${name}`,
       success: (data) => {
-        debugger
+        // debugger
         console.log(data);
         this.setState({currentWorkout: data})
          // this.setState({currentWorkout:exercise.responseText})
