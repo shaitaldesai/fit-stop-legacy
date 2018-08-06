@@ -1,3 +1,6 @@
+import React from 'react';
+import './../css/style.css';
+
 function ExerciseOptions(props) {
   console.log(props)
   // return <p> hello </p>
@@ -13,4 +16,5 @@ function ExerciseOptions(props) {
 
 
 
-window.ExerciseOptions = ExerciseOptions;
+export default ExerciseOptions;
+// window.ExerciseOptions = ExerciseOptions;

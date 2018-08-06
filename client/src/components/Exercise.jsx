@@ -1,3 +1,6 @@
+import React from 'react';
+import './../css/style.css';
+
 var Exercise = (props) => (
   <div className="exercise">
     <div className="exerciseDescription">
@@ -9,4 +12,5 @@ var Exercise = (props) => (
 );
 
 
-window.Exercise = Exercise;
+export default Exercise;
+// window.Exercise = Exercise;
