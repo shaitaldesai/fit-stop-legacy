@@ -1,17 +1,15 @@
 var mongoose = require('mongoose');
-var dbUri = require('./dbInfo').dbUri;
 var Schema = mongoose.Schema;
+var seed = require('./seedDB.js');
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
   Connection to MongoDB instance
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-mongoose.connect('mongodb://' + dbUri);
 
-mongoose.connection.once('open', function() {
-  console.log('database is connected');
-});
+const MONGODB_URI = process.env.MONGODB_URI  || 'mongodb://localhost/fit-stop';
+mongoose.connect(MONGODB_URI);
 
 mongoose.connection.on('error', function(error) {
   console.log('database connection error: ' + error);
@@ -40,12 +38,22 @@ var userSchema = new Schema({
 });
 
 
+
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
    Model Creation based on Schemas
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+
+
 var Exercise = mongoose.model('Exercise', exerciseSchema);
 var User = mongoose.model('User', userSchema);
+
+// Inserting data - // Uncomment (and deploy in heroku) first time when no data is there
+// Exercise.insertMany(seed, (err) => {
+//   console.log(err);
+// })
+
+
 
 module.exports.exerciseModel = Exercise;
 module.exports.userModel = User;

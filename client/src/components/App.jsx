@@ -12,7 +12,8 @@ class App extends React.Component {
       countdown: 3,
       time: null,
       showButtons: true,
-      workoutLengthInMins: 15
+      workoutLengthInMins: 15,
+      workoutList: []
     };
 
     this.goToWorkout = this.goToWorkout.bind(this);
@@ -26,7 +27,7 @@ class App extends React.Component {
     this.logOut = this.logOut.bind(this);
     this.login = this.login.bind(this);
     this.signup = this.signup.bind(this);
-
+    this.handleWorkoutSelection = this.handleWorkoutSelection.bind(this);
   }
 
 
@@ -81,6 +82,44 @@ class App extends React.Component {
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
   The following functions send requests to the server
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+
+  componentDidMount() {
+    console.log('called listExercises')
+    $.ajax({
+      method: 'GET',
+      url: '/getAllExercises',
+      success: (data) => {
+        data = JSON.parse(data);
+        this.setState({workoutList: data});
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+  }
+
+
+
+  handleWorkoutSelection(e) {
+
+    // var id = e.target.getAttribute('value');
+    var name = e.target.innerText;
+    $.ajax({
+      method: 'GET',
+      url: `/getExercise/${name}`,
+      success: (data) => {
+        debugger
+        console.log(data);
+        this.setState({currentWorkout: data})
+         // this.setState({currentWorkout:exercise.responseText})
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    })
+
+  }
 
   getWorkoutHistory() {
     $.ajax({
@@ -256,8 +295,17 @@ class App extends React.Component {
 
   render() {
     var toBeRendered = () => {
+
       if (this.state.currentState === 'Dashboard') {
-        return (<Dashboard goToCountdown={this.goToCountdown} workoutHistory={this.state.workoutHistory} loggedIn={this.state.loggedIn} />);
+        return (
+          <div>
+           <p> Select your workout </p>
+           <ExerciseOptions exercises={this.state.workoutList} handleWorkoutSelection={this.handleWorkoutSelection}/>
+            <Dashboard goToCountdown={this.goToCountdown} workoutHistory={this.state.workoutHistory} loggedIn={this.state.loggedIn} />
+
+          </div>
+          );
+
       }
       if (this.state.currentState === 'Login') {
           return (<Login login={this.login} />);
@@ -269,6 +317,7 @@ class App extends React.Component {
           return (<Countdown countdown={this.state.countdown} />);
       }
       if (this.state.currentState === 'Workout') {
+        // console.log('IMPORTANFNFJF', {this.state.currentWorkout})
         return (<Workout exercise={this.state.currentWorkout[this.state.currentExercise]} timer={this.formatTime(this.state.time)} countdown={this.state.countdown} goToSummary={this.goToSummary} goToDashboard={this.goToDashboard} ref="workoutPage" />);
       }
       if (this.state.currentState === 'Summary') {
@@ -280,6 +329,7 @@ class App extends React.Component {
       <div className = "App">
         <Header username={this.state.username} goToLogin={this.goToLogin} goToSignUp={this.goToSignUp} loggedIn={this.state.loggedIn} logOut={this.logOut} showButtons={this.state.showButtons}/>
         {toBeRendered()}
+
       </div>
     )
   }

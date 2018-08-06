@@ -168,4 +168,8 @@ var scorpionStretch = {
 }
 
 
+var data = [highKnees, catCow, hipCircles, scorpionStretch, ragdoll, cobra, doubleSideJacknifes, bicycleCrunches, standingCrossBodyCrunches, sitUps, reverseCrunch, windshieldWipers, plankKneeToElbow, plank, flutterKicks]
+
+module.exports = data
+
 

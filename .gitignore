@@ -1,3 +1,5 @@
-package-lock.json
 config.js
+db/data
 node_modules
+package-lock.json
+
