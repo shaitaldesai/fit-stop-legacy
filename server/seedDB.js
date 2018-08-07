@@ -7,7 +7,7 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
   Warmup Exercises
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
-var db = require('./db.js');
+// var db = require('./db.js');
 
 var highKnees = {
   name: 'High Knees',
@@ -171,12 +171,12 @@ var scorpionStretch = {
 
 var data = [highKnees, catCow, hipCircles, scorpionStretch, ragdoll, cobra, doubleSideJacknifes, bicycleCrunches, standingCrossBodyCrunches, sitUps, reverseCrunch, windshieldWipers, plankKneeToElbow, plank, flutterKicks]
 
-var insertExercises = function () {
-db.exerciseModel.create(data)
-  .then(() => db.disconnect());;
-};
+// var insertExercises = function () {
+// db.exerciseModel.create(data)
+//   .then(() => db.disconnect());;
+// };
 
 
-insertExercises();
+// insertExercises();
 
-
+module.exports = data;
