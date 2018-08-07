@@ -49,9 +49,9 @@ var Exercise = mongoose.model('Exercise', exerciseSchema);
 var User = mongoose.model('User', userSchema);
 
 // Inserting data - // Uncomment (and deploy in heroku) first time when no data is there
-// Exercise.insertMany(seed, (err) => {
-//   console.log(err);
-// })
+Exercise.insertMany(seed, (err) => {
+  console.log(err);
+})
 
 
 
