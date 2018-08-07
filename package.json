@@ -10,7 +10,9 @@
   },
   "scripts": {
     "prestart": "babel ./client/src --out-dir client/public/compiled --presets=es2015,react --ignore=node_modules,compiled --source-maps inline",
+    "dev": "node ./server/server.js",
     "start": "node ./server/server.js",
+    "heroku-postbuild": "webpack -p",
     "hot-reload": "webpack-dev-server --mode development --open --hot",
     "watch": "babel ./client/src --out-dir client/public/compiled --presets=es2015,react --ignore=node_modules,compiled --source-maps inline --watch",
     "react-dev": "webpack -d --watch",
