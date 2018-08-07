@@ -16,7 +16,6 @@
     "hot-reload": "webpack-dev-server --mode development --open --hot",
     "watch": "babel ./client/src --out-dir client/public/compiled --presets=es2015,react --ignore=node_modules,compiled --source-maps inline --watch",
     "react-dev": "webpack -d --watch",
-    "build": "webpack --mode production",
     "db:setup": "node server/seedDB.js"
   },
   "dependencies": {
