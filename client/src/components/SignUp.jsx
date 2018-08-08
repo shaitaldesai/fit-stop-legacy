@@ -1,3 +1,6 @@
+import React from 'react';
+import './../css/style.css';
+
 var SignUp = (props) => (
   <div className="signupPage">
     <h1>Sign Up</h1>
@@ -12,4 +15,6 @@ var SignUp = (props) => (
 );
 
 
-window.SignUp = SignUp;
+export default SignUp;
+// window.SignUp = SignUp;
+

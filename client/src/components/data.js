@@ -1,0 +1,136 @@
+    var daysArr = [
+      {date: 'Sat Apr 28 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sat Apr 28 2018 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Fri Apr 27 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Fri Apr 27 2018 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Fri Apr 27 2018 20:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Thu Apr 26 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Wed Apr 25 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Wed Apr 25 2018 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Tue Apr 24 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Mon Apr 23 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Mon Apr 23 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sun Apr 22 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sun Apr 22 2018 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sun Apr 22 2018 21:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sat Apr 21 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sat Apr 21 2018 21:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Fri Apr 20 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Thu Apr 19 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Thu Apr 19 2018 20:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Wed Apr 18 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},  
+    ];
+
+
+    var febArr = [
+      {date: 'Sat Mar 4 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sat Mar 4 2017 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Fri Mar 3 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Fri Mar 3 2017 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Fri Mar 3 2017 20:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      // {date: 'Thu Mar 2 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Wed Mar 1 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Wed Mar 1 2017 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Tue Feb 28 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Mon Feb 27 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Mon Feb 27 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sun Feb 26 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sun Feb 26 2017 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sun Feb 26 2017 21:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sat Feb 25 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sat Feb 25 2017 21:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Fri Feb 24 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Thu Feb 23 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Thu Feb 23 2017 20:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Wed Feb 22 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},  
+    ];
+
+    var febLeapArr = [
+      {date: 'Sat Mar 5 2016 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sat Mar 5 2016 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Fri Mar 4 2016 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Fri Mar 4 2016 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Fri Mar 4 2016 20:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Thu Mar 3 2016 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Wed Mar 2 2016 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Wed Mar 2 2016 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Tue Feb 29 2016 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Mon Feb 28 2016 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Mon Feb 28 2016 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sun Feb 27 2016 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sun Feb 27 2016 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sun Feb 27 2016 21:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sat Feb 26 2016 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Sat Feb 26 2016 21:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Fri Feb 25 2016 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Thu Feb 24 2016 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Thu Feb 24 2016 20:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+      {date: 'Wed Feb 23 2016 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},  
+    ];
+
+      var monthArr = [
+        {date: 'Fri Feb 23 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Mon Apr 30 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Mon Apr 30 2018 18:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Sat Apr 28 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Sat Apr 28 2018 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Fri Apr 27 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Fri Apr 27 2018 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Fri Apr 27 2018 20:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Thu Apr 26 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Wed Apr 25 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Wed Apr 25 2018 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Tue Apr 24 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Mon Apr 23 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Mon Apr 23 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Sun Apr 22 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Sun Apr 22 2018 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Sun Apr 22 2018 21:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Sat Apr 21 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Sat Apr 21 2018 21:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Fri Apr 20 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Thu Apr 19 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Thu Apr 19 2018 20:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Tue Apr 10 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Tue Apr 10 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Tue Apr 10 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Sun Apr 8 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Sun Apr 8 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},
+        {date: 'Sun Apr 1 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15},  
+      ];
+
+    var yearArr = [
+      { date: 'Sat Aug 4 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Thu Jul 26 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Mon Jul 23 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Tue Jun 12 2018 21:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Tue Jun 12 2018 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Tue Jun 12 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Fri May 4 2018 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Fri May 4 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Mon Apr 23 2018 18:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Mon Apr 23 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Wed Mar 21 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Tue Feb 27 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Fri Feb 23 2018 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Thu Sep 28 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Sat Jul 15 2017 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Sat Jul 15 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Sat Jul 15 2017 15:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Tue May 23 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Thu Mar 23 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Tue Feb 14 2017 19:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Tue Feb 14 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },
+        { date: 'Tue Jan 3 2017 17:23:43 GMT-0700 (Pacific Daylight Time)', lengthOfWorkout: 15 },  
+    ];
+
+module.exports.daysArr = daysArr;
+module.exports.febArr = febArr;
+module.exports.febLeapArr = febLeapArr;
+module.exports.monthArr = monthArr;
+module.exports.yearArr = yearArr;
+
+
+
+
+

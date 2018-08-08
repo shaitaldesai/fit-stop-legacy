@@ -3,3 +3,6 @@ db/data
 node_modules
 package-lock.json
 
+.DS_Store
+/client/public/compiled
+/client/public/dist/bundle.js

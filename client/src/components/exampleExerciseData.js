@@ -1,13 +1,23 @@
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-  Sample Exercise Data you can use to seed your MongoDB instance!
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* * * * * * * * * * * * * * * * * * * * * * * * * *
+  This file saves an example workout with 15 exercises to an array
 
+  The format of the exercises should be:
+  var exercise = {
+    name: String,
+    description: String,
+    type: String (one of the following: cooldown, warmup, exercise)
+    picture: String (url of image),
+    environment: String (either outdoor or indoor)
+    muscleGroup: String
+    difficulty: String
+  }
+
+* * * * * * * * * * * * * * * * * * * * * * * * * */
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * *
-  Warmup Exercises
+  Warm Up Exercises
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
-// var db = require('./db.js');
 
 var highKnees = {
   name: 'High Knees',
@@ -168,15 +178,8 @@ var scorpionStretch = {
   difficulty: 'easy'
 }
 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * *
+  Add all the exercises to an array
+* * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-var data = [highKnees, catCow, hipCircles, scorpionStretch, ragdoll, cobra, doubleSideJacknifes, bicycleCrunches, standingCrossBodyCrunches, sitUps, reverseCrunch, windshieldWipers, plankKneeToElbow, plank, flutterKicks]
-
-// var insertExercises = function () {
-// db.exerciseModel.create(data)
-//   .then(() => db.disconnect());;
-// };
-
-
-// insertExercises();
-
-module.exports = data;
+window.exampleExerciseData = [highKnees, flutterKicks, cobra, catCow, hipCircles,  plank, plankKneeToElbow, windshieldWipers, reverseCrunch, sitUps, standingCrossBodyCrunches, bicycleCrunches, doubleSideJacknifes,  ragdoll, scorpionStretch];
